@@ -1,7 +1,8 @@
 // src/config/db.js
-import { Pool } from 'pg';
+import pkg from 'pg';
 import dotenv from 'dotenv';
 
+const { Pool } = pkg; // Destructure Pool from the imported pg package
 dotenv.config();
 
 const pool = new Pool({
