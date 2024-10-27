@@ -29,7 +29,7 @@ export const createTicket = async (req, res) => {
     );
 
     // Generate the QR code URL that links to the protected ticket details page
-    const qrCodeImage = await generateQRCode(`http://localhost:5000/tickets/${ticketId}`);
+    const qrCodeImage = await generateQRCode(`https://web-lab-o5uu.onrender.com/tickets/${ticketId}`);
 
     // Set the response content type to an image (PNG)
     res.setHeader('Content-Type', 'image/png');
