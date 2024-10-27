@@ -1,8 +1,7 @@
-// src/config/db.js
 import pkg from 'pg';
 import dotenv from 'dotenv';
 
-const { Pool } = pkg; // Destructure Pool from the imported pg package
+const { Pool } = pkg;
 dotenv.config();
 
 const pool = new Pool({
@@ -12,7 +11,7 @@ const pool = new Pool({
   database: process.env.DB_NAME,
   port: process.env.DB_PORT,
   ssl: {
-    rejectUnauthorized: false, // Necessary for connecting to Render's PostgreSQL
+    rejectUnauthorized: false,
   },
 });
 
@@ -34,7 +33,6 @@ const createTable = async () => {
   }
 };
 
-// Call createTable function to ensure the table is created on startup
 createTable();
 
 export const query = (text, params) => pool.query(text, params);

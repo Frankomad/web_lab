@@ -1,6 +1,5 @@
 import QRCode from 'qrcode';
 
-// Function to generate QR code
 export const generateQRCode = async (url) => {
     try {
       const qrCodeImage = QRCode.toBuffer(url, { type: 'image/png' });
